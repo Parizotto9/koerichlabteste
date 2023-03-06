@@ -1,7 +1,36 @@
 .tablePage {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 150px;
+}
+
+.input {
+  width: 300px;
+  padding: 10px 20px;
+  border: solid 2px;
+  border-radius: 8px;
+  transition: 0.4s;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.input:focus {
+  -webkit-box-shadow: 0px 32px 59px -9px rgba(160, 160, 160, 1);
+  -moz-box-shadow: 0px 32px 59px -9px rgba(160, 160, 160, 1);
+  box-shadow: 0px 32px 59px -9px rgba(160, 160, 160, 1);
+}
+
+.checkbox {
+  cursor: pointer;
+  font-size: 15px;
+  margin: 20px 0;
 }
 
 .tableHeader {
@@ -16,6 +45,11 @@
 
 .tableInfo {
   color: grey;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 .tableInfo:hover {
   color: black;
@@ -50,5 +84,8 @@
 @media screen and (min-width: 550px) {
   .table {
     margin: 20px;
+  }
+  .input {
+    width: 400px;
   }
 }
