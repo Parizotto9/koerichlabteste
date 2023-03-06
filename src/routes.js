@@ -9,7 +9,7 @@ export default function AppRouter() {
         {/* <Menu /> */}
         <Routes>
           <Route path="/">
-            <Route path="table" element={<Table />} />
+            <Route path="tabela" element={<Table />} />
           </Route>
         </Routes> 
       </Router>
