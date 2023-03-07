@@ -9,12 +9,13 @@ export default function Table() {
     "Produto",
     "Quantidade",
     " Peças Defeituosas",
-    "Peças a Venda" /* , "Valor" */,
+    "Peças a Venda",
+    "Valor",
   ];
   const updateCheckbox = () => {
     setChecked(!checked);
   };
-  
+
   return (
     <div className={style.tablePage}>
       <div>
@@ -44,8 +45,8 @@ export default function Table() {
         <tbody>
           {tableData
             .filter((data) => {
-              if(checked === true && data.quantidade - data.defeito < 50){
-                return false
+              if (checked === true && data.quantidade - data.defeito < 50) {
+                return false;
               }
               if (search === "") {
                 return data;
@@ -62,7 +63,12 @@ export default function Table() {
                   <td>{item.quantidade}</td>
                   <td>{item.defeito}</td>
                   <td>{item.quantidade - item.defeito}</td>
-                  {/* <td>{item.valor} RS</td> */}
+                  <td>
+                    {item.valor.toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    })}
+                  </td>
                 </tr>
               );
             })}
