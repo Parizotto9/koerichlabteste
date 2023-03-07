@@ -10,7 +10,7 @@
     "produto": "Sofa",
     "quantidade": 85,
     "defeito": 10,
-    "valor": 323.00,
+    "valor": 323.0,
     "imagem": "sofa.jpeg"
   },
   {
