@@ -5,15 +5,27 @@ import { Radio, RadioGroup, Stack, Flex, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export default function Products() {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState(
+    localStorage.getItem("productsOrder") || "1"
+  );
   const [produ, setProdu] = useState(products);
 
   useEffect(() => {
-    console.log(value.toString());
+    const onClose = () => {
+      localStorage.setItem("productsOrder", value);
+    };
+
+    window.onbeforeunload = onClose;
+
+    return () => {
+      window.onbeforeunload = null;
+    };
+  }, [value]);
+
+  useEffect(() => {
     switch (value) {
       case "1":
         setProdu(products);
-        console.log(produ);
         return;
       case "2":
         setProdu(
@@ -26,17 +38,16 @@ export default function Products() {
         return;
       case "3":
         setProdu([...produ].sort((a, b) => a.quantidade - b.quantidade));
-        console.log(produ);
         return;
       case "4":
         setProdu([...produ].sort((a, b) => a.defeito - b.defeito));
-        console.log(produ);
         return;
       default:
         setProdu(products);
         return;
     }
-  }, [value, produ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   return (
     <Flex direction="column" justify="center" align="center">

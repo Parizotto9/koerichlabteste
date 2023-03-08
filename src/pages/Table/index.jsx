@@ -1,10 +1,16 @@
 import style from "./Table.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import tableData from "../../assets/repositorio.json";
+import { Checkbox } from "@chakra-ui/react";
 
 export default function Table() {
-  const [search, setSearch] = useState("");
-  const [checked, setChecked] = useState(false);
+  const [search, setSearch] = useState(
+    localStorage.getItem("tableSearch") || ""
+  );
+  const [checked, setChecked] = useState(
+    JSON.parse(localStorage.getItem("tableCheckbox")) || false
+  );
+  console.log();
   const header = [
     "Produto",
     "Quantidade",
@@ -12,27 +18,40 @@ export default function Table() {
     "Peças a Venda",
     "Valor",
   ];
+
   const updateCheckbox = () => {
     setChecked(!checked);
+    console.log(checked, "qqui");
   };
+
+  useEffect(() => {
+    // console.log(checked);
+    const onClose = () => {
+      localStorage.setItem("tableSearch", search);
+      localStorage.setItem("tableCheckbox", JSON.stringify(checked));
+    };
+
+    window.onbeforeunload = onClose;
+
+    return () => {
+      window.onbeforeunload = null;
+    };
+  }, [search, checked]);
 
   return (
     <div className={style.tablePage}>
       <div>
         <input
           className={style.input}
+          value={search}
           placeholder="Procure um produto"
           onChange={(event) => setSearch(event.target.value)}
         />
       </div>
       <div className={style.checkbox}>
-        <input
-          type="checkbox"
-          id="checkbox"
-          checked={checked}
-          onChange={updateCheckbox}
-        />
-        <label htmlFor="checkbox">Exibir produtos com 50 peças ou mais</label>
+        <Checkbox isChecked={checked} onChange={updateCheckbox}>
+          Exibir produtos com 50 peças ou mais
+        </Checkbox>
       </div>
       <table className={style.table}>
         <thead>
