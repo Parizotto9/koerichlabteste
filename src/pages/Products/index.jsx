@@ -35,12 +35,15 @@ export default function Products() {
             return 0;
           })
         );
+        console.log(products, "1");
         return;
       case "3":
         setProdu([...produ].sort((a, b) => a.quantidade - b.quantidade));
+        console.log(products, 2);
         return;
       case "4":
         setProdu([...produ].sort((a, b) => a.defeito - b.defeito));
+        console.log(products, 3);
         return;
       default:
         setProdu(products);
@@ -52,9 +55,7 @@ export default function Products() {
   return (
     <Flex direction="column" justify="center" align="center">
       <Text className={style.title}>Produtos em estoque</Text>
-      <Text fontSize="xl" mt="4">
-        Ordenar por
-      </Text>
+      <Text fontSize="xl">Ordenar por</Text>
       <RadioGroup onChange={setValue} value={value} mb="4">
         <Stack direction="row" flexWrap="wrap" justify="center">
           <Radio value="1">Sem Ordem</Radio>

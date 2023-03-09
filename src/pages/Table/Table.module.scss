@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .input {
@@ -26,71 +26,15 @@
   -moz-box-shadow: 0px 32px 59px -9px rgba(160, 160, 160, 1);
   box-shadow: 0px 32px 59px -9px rgba(160, 160, 160, 1);
 }
-
-.checkbox {
-  cursor: pointer;
-  font-size: 15px;
-  margin: 20px 0;
-}
-
-.tableHeader {
-  background-color: #36304a;
-  color: #fff;
-}
-.tableHeader th {
-  border-collapse: collapse;
-  padding: 15px;
-  font-family: "Lato", sans-serif;
-}
-
-.tableInfo {
-  color: grey;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-}
-.tableInfo:hover {
-  color: black;
-  background-color: #c4bfbf !important;
-}
-.tableInfo td {
-  padding: 10px 0px;
-}
-.tableInfo td:last-child {
-  white-space: nowrap;
-}
-.tableInfo:nth-child(even) {
-  background-color: #f5f5f5;
-}
-
-.table {
-  border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 1000px;
+.title {
   text-align: center;
-  -webkit-box-shadow: 0px 11px 100px -37px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 11px 100px -37px rgba(66, 68, 90, 1);
-  box-shadow: 0px 11px 100px -37px rgba(66, 68, 90, 1);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 500px) {
-  .table {
-    font-size: 0.65rem;
-    width: 100%;
-  }
-}
 @media screen and (min-width: 550px) {
-  .table {
-    margin: 20px;
-  }
   .input {
     width: 400px;
   }
