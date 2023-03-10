@@ -17,16 +17,17 @@ export default function Table() {
   };
 
   useEffect(() => {
-    const onClose = () => {
-      localStorage.setItem("tableSearch", search);
-      localStorage.setItem("tableCheckbox", JSON.stringify(checked));
-    };
+    localStorage.setItem("tableSearch", search);
+    localStorage.setItem("tableCheckbox", JSON.stringify(checked));
+    // Função para salvar antes de sair da pág e não ficar rodando direto, mas o Link do react router ele não roda a função pois ele não destroi e reconstroi a pág, daí não dá para usar
+    // const onClose = () => {
+    // };
 
-    window.onbeforeunload = onClose;
+    // window.onbeforeunload = onClose;
 
-    return () => {
-      window.onbeforeunload = null;
-    };
+    // return () => {
+    //   window.onbeforeunload = null;
+    // };
   }, [search, checked]);
 
   const filteredTable = tableData.filter((data) => {
@@ -52,7 +53,12 @@ export default function Table() {
         />
       </div>
       <div className={style.checkbox}>
-        <Checkbox isChecked={checked} mt="4" onChange={updateCheckbox}>
+        <Checkbox
+          isChecked={checked}
+          colorScheme="red"
+          mt="4"
+          onChange={updateCheckbox}
+        >
           Exibir produtos com 50 peças ou mais
         </Checkbox>
       </div>

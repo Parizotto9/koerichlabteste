@@ -11,15 +11,16 @@ export default function Products() {
   const [produ, setProdu] = useState(products);
 
   useEffect(() => {
-    const onClose = () => {
-      localStorage.setItem("productsOrder", value);
-    };
+    localStorage.setItem("productsOrder", value);
+    // mesmo caso da Tabela
+    // const onClose = () => {
+    // };
 
-    window.onbeforeunload = onClose;
+    // window.onbeforeunload = onClose;
 
-    return () => {
-      window.onbeforeunload = null;
-    };
+    // return () => {
+    //   window.onbeforeunload = null;
+    // };
   }, [value]);
 
   useEffect(() => {
@@ -35,15 +36,12 @@ export default function Products() {
             return 0;
           })
         );
-        console.log(products, "1");
         return;
       case "3":
         setProdu([...produ].sort((a, b) => a.quantidade - b.quantidade));
-        console.log(products, 2);
         return;
       case "4":
         setProdu([...produ].sort((a, b) => a.defeito - b.defeito));
-        console.log(products, 3);
         return;
       default:
         setProdu(products);
@@ -58,10 +56,18 @@ export default function Products() {
       <Text fontSize="xl">Ordenar por</Text>
       <RadioGroup onChange={setValue} value={value} mb="4">
         <Stack direction="row" flexWrap="wrap" justify="center">
-          <Radio value="1">Sem Ordem</Radio>
-          <Radio value="2">Nome</Radio>
-          <Radio value="3">Quantidade</Radio>
-          <Radio value="4">Peças com defeito</Radio>
+          <Radio colorScheme="red" value="1">
+            Sem Ordem
+          </Radio>
+          <Radio colorScheme="red" value="2">
+            Nome
+          </Radio>
+          <Radio colorScheme="red" value="3">
+            Quantidade
+          </Radio>
+          <Radio colorScheme="red" value="4">
+            Peças com defeito
+          </Radio>
         </Stack>
       </RadioGroup>
       <div className={style.container}>

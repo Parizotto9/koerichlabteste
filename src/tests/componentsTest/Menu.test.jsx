@@ -21,25 +21,30 @@ describe("Menu", () => {
   it("should contain links", () => {
     renderComponent();
 
-    expect(screen.getByRole("link", { name: "Home" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Tabela" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Produtos" })).toBeInTheDocument();
+    expect(
+      screen.getAllByRole("link", { name: "Home" })[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole("link", { name: "Tabela" })[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole("link", { name: "Produtos" })[0]
+    ).toBeInTheDocument();
   });
 
   it("should contain the correct href", () => {
     renderComponent();
 
-    expect(screen.getByRole("link", { name: "Home" })).toHaveAttribute(
+    expect(screen.getAllByRole("link", { name: "Home" })[0]).toHaveAttribute(
       "href",
       "/"
     );
-    expect(screen.getByRole("link", { name: "Tabela" })).toHaveAttribute(
+    expect(screen.getAllByRole("link", { name: "Tabela" })[0]).toHaveAttribute(
       "href",
       "/tabela"
     );
-    expect(screen.getByRole("link", { name: "Produtos" })).toHaveAttribute(
-      "href",
-      "/produtos"
-    );
+    expect(
+      screen.getAllByRole("link", { name: "Produtos" })[0]
+    ).toHaveAttribute("href", "/produtos");
   });
 });

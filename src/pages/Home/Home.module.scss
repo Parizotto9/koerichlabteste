@@ -1,0 +1,32 @@
+.box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.title {
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+}
+.subTitle {
+  font-size: 1.5rem;
+  margin: 20px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+}
+.text {
+  margin: 20px;
+  max-width: 700px;
+}
+.img {
+  border: solid 5px #ff3c38;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 50%;
+  width: 250px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

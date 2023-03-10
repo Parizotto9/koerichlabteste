@@ -1,6 +1,6 @@
 # Projeto de avaliação
 
-Olá, este é um pequeno projeto em que iremos avaliar sua forma de "kodar" e trabalhar. 
+Olá, este é um pequeno projeto em que iremos avaliar sua forma de "kodar" e trabalhar.
 
 Abaixo seguem as intruções para realização do projeto.
 
@@ -27,12 +27,14 @@ O arquivo index.html está em branco, nele deverá ser realizado a codificação
 Você não é obrigado a realizar o projeto nesta estrutura, fica a seu critério utilizar um framework de sua preferência.
 
 ### TESTES UNITÁRIOS
+
 É esperado criação de teste unitário com o minimo de 70% de cobertura.
 
 ### ATIVIDADE-001 Listagem inicial
 
 Deve-se importar o arquivo repositorio.json e exibir os registros em uma tabela com os seguintes colunas
-- Nome do Produto 
+
+- Nome do Produto
 - Quantidade em estoque
 - Peças com defeitos
 - Peças para vendas
@@ -62,7 +64,6 @@ Ao sair da pagina e retornar, a tela deve ser inicializada conforme o usuário d
 
 Não queremos um visual padrão, agora queremos a sua criatividade, estilizar a pagina para que fique agradável de visualizar, aqui você pode utilizar qualquer framework de estilo do seu agrado.
 
-
 ### ATIVIDADE-008 (Opcional para vaga front-end obrigatório para FULLSTACK)
 
 Desenvolver um backend em java para cadastrar, editar itens a lista.
@@ -71,8 +72,25 @@ Desenvolver um backend em java para cadastrar, editar itens a lista.
 
 Desenvolver uma estrutura e aplicar testes unitários com cobertura de 50% do código, tanto Frontend quanto no Backend
 
-
 ### EXECUÇÃO DO TESTE
+
+Estou utilizando a versão v14.19.0 do Node
+
+Ao iniciar o projeto rodar:
+
+    npm install
+
+para rodar localmente o projeto:
+
+    npm start
+
+para compilar o projeto:
+
+    npm build
+
+para testar o projeto:
+
+    npm test
 
 Aqui deve ser editado pelo desenvolvedor a forma de como podemos executar o projeto para avaliação. Incluindo versões das ferramentas necessárias para rodar a aplicação: Ex: NodeJS 15, Java 1.8 etc... Como rodar os testes unitários e ver os resultados e demais informações pertinentes ao projeto.
 
